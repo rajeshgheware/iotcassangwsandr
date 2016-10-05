@@ -1,0 +1,5 @@
+{"properties": [{
+  "name": "server.tk109.port",
+  "type": "java.lang.String",
+  "description": "TK 109 port"
+}]}

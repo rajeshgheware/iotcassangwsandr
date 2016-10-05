@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:int="http://www.springframework.org/schema/integration"
+	xmlns:int-ip="http://www.springframework.org/schema/integration/ip"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration.xsd
+		http://www.springframework.org/schema/integration/ip http://www.springframework.org/schema/integration/ip/spring-integration-ip.xsd">
+
+	<context:property-placeholder />
+
+	<context:component-scan base-package="iot.sensors.location"></context:component-scan>
+
+	<int-ip:tcp-connection-factory id="sensorLocationCF"
+		type="server" port="${sensor.location.port}" deserializer="serializeDeserialize"
+		serializer="serializeDeserialize" backlog="50" lookup-host="false"
+		using-nio="true" single-use="true" apply-sequence="true" so-timeout="30000" />
+
+	<int-ip:tcp-inbound-gateway id="sensorLocationGateway"
+		connection-factory="sensorLocationCF" request-channel="sensorLocationMessages"
+		reply-channel="sensorLocationResponseChannel" error-channel="errorChannel"
+		reply-timeout="5000" />
+
+	<int:publish-subscribe-channel id="sensorLocationMessages"
+		datatype="java.lang.String" />
+	<int:channel id="sensorLocationResponseChannel" datatype="java.lang.String" />
+	<int:channel id="sensorLocationMessagesAndroid" datatype="java.lang.String" />
+	<int:channel id="sensorAccelerometerMessagesAndroid"
+		datatype="java.lang.String" />
+	<int:channel id="otherMessagesChannel" datatype="java.lang.String" />
+
+	<int:recipient-list-router id="sensorLocationRouter"
+		input-channel="sensorLocationMessages" default-output-channel="otherMessagesChannel">
+		<int:recipient channel="sensorAccelerometerMessagesAndroid"
+			selector-expression="payload.startsWith('accel_0')" />
+		<int:recipient channel="sensorLocationMessagesAndroid"
+			selector-expression="payload.startsWith('gps')" />
+	</int:recipient-list-router>
+
+	<int:transformer id="
+			errorHandler " input-channel="errorChannel"
+		expression="payload.failedMessage.payload + ':' + payload.cause.message" />
+
+	<bean id="integrationConversionService"
+		class="org.springframework.context.support.ConversionServiceFactoryBean"
+		primary="false">
+		<property name="converters">
+			<list>
+				<bean class="iot.sensors.location.ByteArrayToStringConverter"></bean>
+			</list>
+		</property>
+	</bean>
+
+</beans>
