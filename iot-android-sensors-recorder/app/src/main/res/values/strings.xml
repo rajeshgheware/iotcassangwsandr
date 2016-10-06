@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Common texts -->
+    <string name="app_name">Sensors IOT </string>
+    <string name="settings_name">Recording Settings</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_select_all">Select All</string>
+    <string name="action_share">Share</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_ok">OK</string>
+
+    <!-- Measure -->
+    <string name="measure_permission_denied">Permission Denied</string>
+    <string name="measure_disabled">Off</string>
+    <string name="measure_quiet">Quiet</string>
+    <string name="measure_ambiguous">Ambiguous</string>
+    <string name="measure_frequency" formatted="false">%.3g Hz</string>
+
+    <!-- Recording -->
+    <string name="record_clock">%1$02d:%2$02d:%3$02d</string>
+    <string name="record_notification_clock">Recording %1$02d:%2$02d:%3$02d</string>
+    <string name="record_file_caption">File</string>
+    <string name="record_network_caption">Network</string>
+    <string name="record_start">Start Recording</string>
+    <string name="record_restart">Re-start</string>
+    <string name="record_stop">Stop</string>
+    <string name="record_pause">Pause</string>
+    <string name="record_file_error">Error %$1d</string>
+    <string name="record_network_text">%1$s port %2$d on %3$s</string>
+    <string name="record_network_error">Error %1$d</string>
+    <string name="record_network_connecting">Connecting</string>
+    <string name="record_network_connected">Connected</string>
+
+    <!-- Records list -->
+    <string name="records_empty">No records yet</string>
+    <string name="records_duration">%1$02d:%2$02d:%3$02d</string>
+    <string name="records_size_distance_time">%1$s for %2$s in %3$s</string>
+    <string name="records_size_time">%1$s in %2$s</string>
+    <string name="records_size">%1$s</string>
+    <string name="records_recording">Recording…</string>
+    <string name="records_dates_wide">%1$s to %2$s</string>
+    <string name="records_share_failed">No application to share those records with</string>
+    <string name="records_delete_failed">Not all records could be deleted</string>
+    <plurals name="records_action_title">
+        <item quantity="one">%1$d record</item>
+        <item quantity="other">%1$d records</item>
+    </plurals>
+    <plurals name="records_delete_confirm">
+        <item quantity="one">Delete %1$d record?</item>
+        <item quantity="other">Delete %1$d records?</item>
+    </plurals>
+
+    <!-- Notification content texts -->
+    <string name="output_saving_streaming">Saving and streaming</string>
+    <string name="output_saving">Saving</string>
+    <string name="output_streaming">Streaming</string>
+    <string name="output_disabled"></string>
+
+    <!-- Preferences -->
+    <string name="pref_record_title">Recording</string>
+    <string name="pref_file_save">Save to file</string>
+    <string name="pref_network">Save over network</string>
+    <string name="pref_network_value">%1$s on %2$s port %3$d</string>
+    <string name="pref_network_disabled">Disabled</string>
+    <string name="pref_sampling_period">Sampling period</string>
+    <string name="pref_sampling_period_value">Set to %1$dms</string>
+    <string name="pref_sampling_period_constant">Set to constant %1$s</string>
+    <string name="pref_save_binary">Save in binary</string>
+    <string name="pref_heart_rate">Heart rate</string>
+    <plurals name="pref_heart_rate_summary">
+        <item quantity="one">%1$d device subscribed</item>
+        <item quantity="other">%1$d devices subscribed</item>
+    </plurals>
+    <string name="pref_sensors_title">Sensors</string>
+    <string name="pref_sensors_restart">Re-start logging to apply</string>
+
+    <!-- Preference dialgos -->
+    <string name="sampling_period_title">Sampling period</string>
+    <string name="sampling_period_constants_text">Constant</string>
+    <string name="sampling_period_milliseconds_text">Milliseconds</string>
+    <array name="sampling_period_default_values">
+        <item>Normal</item>
+        <item>UI</item>
+        <item>Game</item>
+        <item>Fastest</item>
+        <item>Custom</item>
+    </array>
+
+    <string name="network_save">Save over network</string>
+    <string name="network_title">Set network</string>
+    <string name="network_host">Host / Server</string>
+    <string name="network_protocol">Protocol</string>
+    <string name="network_port">Port</string>
+    <array name="network_protocol_values">
+        <item>TCP</item>
+        <item>UDP</item>
+    </array>
+
+    <string name="ble_title">BLE devices</string>
+    <string name="ble_unknown_device">Unknown</string>
+    <string name="ble_rescan">Rescan</string>
+    <string name="ble_enable">Enable bluetooth</string>
+
+</resources>

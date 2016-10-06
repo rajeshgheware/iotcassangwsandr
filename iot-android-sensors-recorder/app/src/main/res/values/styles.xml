@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="actionBarStyle">@style/AppTheme.ActionBar.Solid</item>
+        <item name="actionBarTheme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+        <item name="android:windowBackground">@color/material_grey_100</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionModeOverlay">true</item>
+    </style>
+
+    <style name="AppTheme.ActionBar.Solid" parent="@style/Widget.AppCompat.Light.ActionBar.Solid">
+        <item name="titleTextStyle">@style/AppTheme.ActionBar.Title</item>
+    </style>
+
+    <style name="AppTheme.ActionBar.Title" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/colorTextPrimaryInverse</item>
+    </style>
+
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="editTextStyle">@style/EditTextStyle</item>
+        <item name="spinnerStyle">@style/SpinnerStyle</item>
+        <item name="android:spinnerItemStyle">@style/SpinnerItem</item>
+        <item name="android:spinnerDropDownItemStyle">@style/SpinnerDropDownItem</item>
+    </style>
+
+    <style name="EditTextStyle" parent="@style/Widget.AppCompat.EditText">
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+    </style>
+
+    <style name="SpinnerCaption" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:textColor">?android:attr/textColorHint</item>
+    </style>
+
+    <style name="SpinnerStyle" parent="@style/Widget.AppCompat.Spinner.Underlined">
+        <item name="android:paddingLeft">0dp</item>
+    </style>
+
+    <style name="SpinnerItem" parent="@style/Widget.AppCompat.TextView.SpinnerItem">
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+        <item name="android:textColor">?attr/editTextColor</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:paddingBottom">0dp</item>
+    </style>
+
+    <style name="SpinnerDropDownItem" parent="@style/Widget.AppCompat.DropDownItem.Spinner" >
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+        <item name="android:textColor">?attr/editTextColor</item>
+        <item name="android:paddingLeft">4dp</item>
+    </style>
+
+    <style name="RecordingButtonTextView" >
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+        <!-- <item name="android:textColor">@color/material_lime_700</item> -->
+    </style>
+
+    <style name="ListFallback" parent="@style/TextAppearance.AppCompat.Headline" >
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    </style>
+
+    <style name="ListItemFirst" parent="@style/TextAppearance.AppCompat.Subhead" />
+
+    <style name="ListItemSecond" parent="@style/TextAppearance.AppCompat.Body1" >
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    </style>
+
+</resources>
